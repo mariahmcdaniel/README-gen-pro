@@ -22,7 +22,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs')
 const prompt = inquirer.createPromptModule();
-import { generateMarkdown, renderLicenseBadge, renderLicenseLink, renderLicenseSection } from './utils/generateMarkdown.js';
+import { generateMarkdown, writeToFile } from './utils/generateMarkdown.js';
 
 prompt([
     {
@@ -57,7 +57,7 @@ prompt([
     },
     {
         type: 'input',
-        message: 'How can one test your application?',
+        message: 'Please explain how testing can be done on your application:',
         name: 'tests'
     },
     {

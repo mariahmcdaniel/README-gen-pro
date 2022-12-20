@@ -4,24 +4,6 @@ const fs = require('fs');
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(data) {
-  const license = data.license;
-  if (license === 'MIT License') {
-    return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
-  } else if (license === 'GNU GPL v2') {
-    return '[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)'
-  } else if (license === 'GNU GPL v3') {
-    return '[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
-  } else if (license === 'BSD 3-Clause License') {
-    return '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
-  } else if (license === 'Apache') {
-    return '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
-  } else if (license === 'BSD 2-Clause License') {
-    return '[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)'
-  } else {
-    return ''
-  }
-};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -76,8 +58,16 @@ const generateMarkdown = function (data) {
   let readmeTemplate =
     `# ${data.title}
 
+
   ## Description
+
   ${data.description}
+`;
+  if (licenseLink) {
+    readmeTemplate += `![licensebadge](https://img.shields.io/badge/License-${licenseKey}.svg)`
+  };
+
+  let toc = `
 
 
   ## Table of contents
@@ -87,24 +77,54 @@ const generateMarkdown = function (data) {
   - [Contributing](#Contributing)
   - [Tests](#Tests)
   - [Questions](#Questions)
+  `;
+  let templateCont =
+    `
+  
 
+  ## Usage
 
-  ## Usage 
   ${data.usage}
 
 
   ## Installation
+
   ${data.installation}
 
 
   ## Contributing
+
   ${data.contribution}
 
 
   ## Tests
+
   ${data.tests}
+
+
+  ## Questions
+  
+  ${data.issues}
+
+  For any further questions please reach out via:
+
+  [Github](https://github.com/${data.github})
+
+  [Email](mailto:${data.email})
 `;
+  if (licenseLink) {
+    toc += '[License](#License)';
+    templateCont += `
+  
+  
+  ## License
+
+  This application is using the ${licenseChoice} license. for more information please visit ${licenseLink}.
+  `
+  };
+  readmeTemplate += toc;
+  readmeTemplate += templateCont;
   return readmeTemplate
 }
 
-module.exports = generateMarkdown;
+module.exports = { generateMarkdown, writeToFile };
