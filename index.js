@@ -22,7 +22,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs')
 const prompt = inquirer.createPromptModule();
-import { generateMarkdown, writeToFile } from './utils/generateMarkdown.js';
+const { genMark, writeFile } = require('./utils/generateMarkdown.js');
 
 prompt([
     {
@@ -77,8 +77,8 @@ prompt([
         choices: ['None', 'MIT License', 'GNU GPL v2', 'Apache', 'GNU GPL v3', 'BSD 3-Clause License', 'BSD 2-Clause License']
     },
 ])
-    .then(generateMarkdown)
-    .then(writeToFile)
+    .then(genMark)
+    .then(writeFile)
 
 
 

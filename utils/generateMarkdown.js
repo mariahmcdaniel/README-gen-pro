@@ -14,8 +14,8 @@ function renderLicenseLink(license) { }
 function renderLicenseSection(license) { }
 
 // TODO: Create a function to generate markdown for README
-const writeToFile = function (fileName, data) {
-  fs.writeFile('yourREADME.md', data, (err) => {
+const writeToFile = function (markdown) {
+  fs.writeFile('newREADME.md', markdown, (err) => {
     if (err)
       throw err;
     console.log('Success! Your README has been generated')
@@ -53,7 +53,7 @@ const generateMarkdown = function (data) {
   };
   if (licenseChoice === 'None') {
     licenseLink === false
-  }
+  };
 
   let readmeTemplate =
     `# ${data.title}
@@ -77,6 +77,7 @@ const generateMarkdown = function (data) {
   - [Contributing](#Contributing)
   - [Tests](#Tests)
   - [Questions](#Questions)
+
   `;
   let templateCont =
     `
@@ -119,7 +120,7 @@ const generateMarkdown = function (data) {
   
   ## License
 
-  This application is using the ${licenseChoice} license. for more information please visit ${licenseLink}.
+  This application is using ${licenseChoice}. for more information please visit ${licenseLink}.
   `
   };
   readmeTemplate += toc;
@@ -127,4 +128,4 @@ const generateMarkdown = function (data) {
   return readmeTemplate
 }
 
-module.exports = { generateMarkdown, writeToFile };
+module.exports = { genMark: generateMarkdown, writeFile: writeToFile };
