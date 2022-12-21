@@ -1,10 +1,10 @@
-# The Best Application Ever Made
+# README-gen-pro
 
 
   ## Description
 
-  You can use this app to find exactly what you're looking for right when you want it.
-
+  I created this application in order to cut down the time it takes to add professional documentation to a user's GitHub repository when working on their next project.
+![licensebadge](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)
 
 
   ## Table of contents
@@ -14,36 +14,42 @@
   - [Contributing](#Contributing)
   - [Tests](#Tests)
   - [Questions](#Questions)
-
-  
+  - [License](#License)
   
 
   ## Usage
 
-  Open the application, say what it is that you need and then press GO.
+  To use this application, you must have the appropriate packages installed. Then by running the command 'node script,js' in the terminal while in the root of the file , you will be prompted with a series of questions . The answers to  your questions are formatted into markdown language and written to a new README file. 
 
 
   ## Installation
 
-  You can install this application from any app store by searching 'Best Application Ever' and tapping download
+  Navigate to the root of the application in your terminal, run the npm init -y command. Once this has been completed, run the command npm i inquirer@8.2.4. You're now ready to launch the application, to do this, run the command 'node script.js'.
 
 
   ## Contributing
 
-  Please email me if you wish to make contributions to my application
+  If you are interested in making contributions to my application, please contact me via email.
 
 
   ## Tests
 
-  Please contact me if you would like further information about testing this application
+  To test this application, follow the given instructions for installation and answer the prompts as directed.
 
 
   ## Questions
   
-  You can contact me directly by email
+  To report any issues with this application, you may contact me by email.
 
   For any further questions please reach out via:
 
-  [Github](https://github.com/mygithub12345)
+  [Github](https://github.com/mariahmcdaniel)
 
-  [Email](mailto:bestappevermade12345@gmail.com)
+  [Email](mailto:myemail12345@email.com)
+
+  
+  
+  ## License
+
+  This application is using BSD 3-Clause License. for more information please visit https://opensource.org/licenses/BSD-3-Clause.
+  
