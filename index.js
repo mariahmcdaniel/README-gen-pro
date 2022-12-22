@@ -53,7 +53,7 @@ prompt([
         type: 'list',
         message: 'Which license are you using for your application?',
         name: 'license',
-        choices: ['None', 'MIT License', 'GNU GPL v2', 'Apache', 'GNU GPL v3', 'BSD 3-Clause License', 'BSD 2-Clause License']
+        choices: ['No License Needed', 'MIT License', 'GNU GPL v2', 'Apache', 'GNU GPL v3', 'BSD 3-Clause License', 'BSD 2-Clause License']
     },
 ])
     .then(genMark)

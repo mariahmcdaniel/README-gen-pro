@@ -38,7 +38,7 @@ const generateMarkdown = function (data) {
     licenseLink = 'https://opensource.org/licenses/BSD-2-Clause';
     licenseKey = 'BSD%202--Clause-orange';
   };
-  if (licenseChoice === 'None') {
+  if (licenseChoice === 'No License Needed') {
     licenseLink === false
   };
 
